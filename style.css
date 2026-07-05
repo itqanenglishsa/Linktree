@@ -1,0 +1,956 @@
+/* ==========================================
+   ITQAN ENGLISH
+   STYLE.CSS
+========================================== */
+
+/* ---------- Google Fonts ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+
+/* ---------- Reset ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Almarai',sans-serif;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    color:#fff;
+
+    background:
+    radial-gradient(circle at top,
+    #18396d 0%,
+    #09111d 45%,
+    #02050b 100%);
+
+}
+
+
+/* ---------- Space Background ---------- */
+
+.bg{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-30;
+
+    background:
+
+    radial-gradient(circle at 20% 15%,
+    rgba(95,170,255,.08),
+    transparent 25%),
+
+    radial-gradient(circle at 85% 80%,
+    rgba(60,130,255,.10),
+    transparent 30%),
+
+    radial-gradient(circle at center,
+    rgba(255,255,255,.02),
+    transparent 60%);
+
+}
+
+
+/* ---------- Floating Blue Glow ---------- */
+
+.circle{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.25;
+
+    animation:moveGlow 14s ease-in-out infinite;
+
+    z-index:-25;
+
+}
+
+.circle1{
+
+    width:350px;
+
+    height:350px;
+
+    background:#2D7FFF;
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+.circle2{
+
+    width:280px;
+
+    height:280px;
+
+    background:#5EB8FF;
+
+    bottom:-90px;
+
+    right:-60px;
+
+    animation-delay:3s;
+
+}
+
+.circle3{
+
+    width:230px;
+
+    height:230px;
+
+    background:#4777FF;
+
+    left:60%;
+
+    top:45%;
+
+    animation-delay:6s;
+
+}
+
+@keyframes moveGlow{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(30px,-35px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
+
+/* ---------- Main ---------- */
+
+.container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px 20px;
+
+}
+
+
+/* ---------- Glass Card ---------- */
+
+.glass{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:430px;
+
+    padding:42px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    border-radius:34px;
+
+    background:rgba(12,20,37,.58);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+    0 25px 70px rgba(0,0,0,.45),
+
+    inset 0 1px rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    animation:cardShow .8s ease;
+
+}
+
+
+/* Reflection */
+
+.glass::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:shine 8s infinite;
+
+}
+
+
+@keyframes shine{
+
+0%{
+
+left:-130%;
+
+}
+
+100%{
+
+left:160%;
+
+}
+
+}
+
+
+@keyframes cardShow{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:28px;
+
+    background:transparent;
+
+    padding:0;
+
+    border-radius:0;
+
+    box-shadow:none;
+
+    transition:.4s;
+
+}
+
+.logo-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+
+    height:240px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(110,200,255,.45) 0%,
+    rgba(70,140,255,.25) 35%,
+    rgba(40,90,255,.10) 60%,
+    transparent 80%);
+
+    filter:blur(18px);
+
+    animation:logoGlow 5s ease-in-out infinite;
+
+    z-index:-1;
+
+}
+
+.logo-box:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.40),
+        0 0 30px rgba(120,190,255,.15);
+
+}
+
+.logo{
+
+    width:170px;
+
+    display:block;
+
+    object-fit:contain;
+
+    background:transparent;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255,255,255,.35))
+        drop-shadow(0 0 18px rgba(110,200,255,.45));
+
+    transition:.4s;
+
+}
+
+.logo:hover{
+
+    transform:scale(1.04);
+
+}
+
+
+/* ==========================================
+   TITLES
+========================================== */
+
+h1{
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:#ffffff;
+
+    margin-bottom:14px;
+
+    letter-spacing:-1px;
+
+    text-shadow:
+        0 0 18px rgba(120,190,255,.20);
+
+}
+
+
+h1 span{
+
+    color:#6EC8FF;
+
+}
+
+
+.subtitle{
+
+    text-align:center;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#DCE9FF;
+
+    margin-bottom:35px;
+
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.buttons{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+/* ==========================================
+   APP STORE
+========================================== */
+
+.main-btn{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:20px;
+
+    border-radius:22px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:19px;
+
+    font-weight:700;
+
+    background:
+        linear-gradient(
+        135deg,
+        #67B8FF,
+        #2563EB);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 18px 40px rgba(37,99,235,.35);
+
+    transition:.35s;
+
+}
+
+
+.main-btn i{
+
+    font-size:30px;
+
+}
+
+
+.main-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 28px 60px rgba(37,99,235,.45);
+
+}
+
+/* ==========================================
+   NORMAL BUTTONS
+========================================== */
+
+.link-btn{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:all .35s ease;
+
+}
+
+.link-btn div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.link-btn i:first-child{
+
+    width:28px;
+
+    text-align:center;
+
+    color:#8FD7FF;
+
+    font-size:24px;
+
+}
+
+.fa-chevron-right{
+
+    color:#BFDFFF;
+
+    transition:.35s;
+
+}
+
+.link-btn:hover{
+
+    transform:translateY(-5px);
+
+    background:rgba(255,255,255,.12);
+
+    border-color:rgba(110,200,255,.25);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.28);
+
+}
+
+.link-btn:hover .fa-chevron-right{
+
+    transform:translateX(8px);
+
+}
+
+/* ==========================================
+   GOOGLE PLAY
+========================================== */
+
+.disabled{
+
+    opacity:.85;
+
+    pointer-events:none;
+
+}
+
+.disabled small{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#8FD7FF;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer{
+
+    width:100%;
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+.footer p{
+
+    color:#BFDFFF;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================
+   RIPPLE EFFECT
+========================================== */
+
+.main-btn,
+.link-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.ripple{
+
+    position:absolute;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.4);
+
+    transform:translate(-50%,-50%);
+
+    animation:ripple .7s linear;
+
+    pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+    from{
+
+        width:0;
+
+        height:0;
+
+        opacity:.8;
+
+    }
+
+    to{
+
+        width:420px;
+
+        height:420px;
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+#stars{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-15;
+
+}
+
+.star{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    animation:twinkle linear infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%{
+
+        opacity:.15;
+        transform:scale(.6);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+    100%{
+
+        opacity:.15;
+        transform:scale(.6);
+
+    }
+
+}
+
+
+/* ==========================================
+   SHOOTING STARS
+========================================== */
+
+#shooting-stars{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-14;
+
+}
+
+.shooting-star{
+
+    position:absolute;
+
+    width:180px;
+
+    height:2px;
+
+    border-radius:10px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,1),
+        rgba(255,255,255,0)
+    );
+
+    transform:rotate(-35deg);
+
+    animation:shoot 3s linear forwards;
+
+}
+
+@keyframes shoot{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translate(-200px,-200px)
+        rotate(-35deg);
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(1800px,900px)
+        rotate(-35deg);
+
+    }
+
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#09111d;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#4D97FF;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#6AB5FF;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .glass{
+
+        max-width:95%;
+
+        padding:34px 24px;
+
+        border-radius:28px;
+
+    }
+
+    .logo{
+
+        width:145px;
+
+    }
+
+    h1{
+
+        font-size:34px;
+
+    }
+
+    .subtitle{
+
+        font-size:16px;
+
+    }
+
+    .main-btn{
+
+        font-size:17px;
+
+        padding:18px;
+
+    }
+
+    .link-btn{
+
+        padding:16px 18px;
+
+    }
+
+    .link-btn div{
+
+        font-size:16px;
+
+    }
+
+}
+
+@media (max-width:420px){
+
+    .logo{
+
+        width:125px;
+
+    }
+
+    h1{
+
+        font-size:30px;
+
+    }
+
+    .subtitle{
+
+        font-size:15px;
+
+    }
+
+}
+
+
+/* ==========================================
+   SELECTION
+========================================== */
+
+::selection{
+
+    background:#5AA8FF;
+
+    color:white;
+
+}
+
+@keyframes logoGlow{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        opacity:.8;
+
+    }
+
+    50%{
+
+        transform:scale(1.12);
+
+        opacity:1;
+
+    }
+
+}
