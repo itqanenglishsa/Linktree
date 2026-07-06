@@ -28,42 +28,9 @@ body{
 
     overflow-x:hidden;
 
-    color:#fff;
+    color:#111;
 
-    background:
-    radial-gradient(circle at top,
-    #18396d 0%,
-    #09111d 45%,
-    #02050b 100%);
-
-}
-
-
-/* ---------- Space Background ---------- */
-
-.bg{
-
-    position:fixed;
-
-    inset:0;
-
-    overflow:hidden;
-
-    z-index:-30;
-
-    background:
-
-    radial-gradient(circle at 20% 15%,
-    rgba(95,170,255,.08),
-    transparent 25%),
-
-    radial-gradient(circle at 85% 80%,
-    rgba(60,130,255,.10),
-    transparent 30%),
-
-    radial-gradient(circle at center,
-    rgba(255,255,255,.02),
-    transparent 60%);
+    background:#ffffff;
 
 }
 
@@ -86,77 +53,6 @@ body{
 
 }
 
-.circle1{
-
-    width:350px;
-
-    height:350px;
-
-    background:#2D7FFF;
-
-    top:-120px;
-
-    left:-120px;
-
-}
-
-.circle2{
-
-    width:280px;
-
-    height:280px;
-
-    background:#5EB8FF;
-
-    bottom:-90px;
-
-    right:-60px;
-
-    animation-delay:3s;
-
-}
-
-.circle3{
-
-    width:230px;
-
-    height:230px;
-
-    background:#4777FF;
-
-    left:60%;
-
-    top:45%;
-
-    animation-delay:6s;
-
-}
-
-@keyframes moveGlow{
-
-0%{
-
-transform:translate(0,0);
-
-}
-
-50%{
-
-transform:translate(30px,-35px);
-
-}
-
-100%{
-
-transform:translate(0,0);
-
-}
-
-}
-
-
-/* ---------- Main ---------- */
-
 .container{
 
     width:100%;
@@ -172,9 +68,6 @@ transform:translate(0,0);
     padding:30px 20px;
 
 }
-
-
-/* ---------- Glass Card ---------- */
 
 .glass{
 
@@ -194,17 +87,14 @@ transform:translate(0,0);
 
     border-radius:34px;
 
-    background:rgba(12,20,37,.58);
+    background:rgba(255,255,255,.14);
 
     backdrop-filter:blur(25px);
 
     border:1px solid rgba(255,255,255,.08);
 
-    box-shadow:
-
-    0 25px 70px rgba(0,0,0,.45),
-
-    inset 0 1px rgba(255,255,255,.08);
+   box-shadow:
+0 20px 50px rgba(0,0,0,.08);
 
     overflow:hidden;
 
@@ -382,7 +272,7 @@ h1{
 
     font-weight:800;
 
-    color:#ffffff;
+    color:#1F2937;
 
     margin-bottom:14px;
 
@@ -409,7 +299,7 @@ h1 span{
 
     line-height:1.7;
 
-    color:#DCE9FF;
+    color:#6B7280;
 
     margin-bottom:35px;
 
@@ -509,19 +399,20 @@ h1 span{
 
     text-decoration:none;
 
-    color:#ffffff;
+    color:#1F2937;
 
     padding:18px 22px;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    background:rgba(255,255,255,.06);
+    background:#FFFFFF;
 
-    backdrop-filter:blur(18px);
+    border:1px solid #E5E7EB;
 
-    border:1px solid rgba(255,255,255,.08);
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.08);
 
-    transition:all .35s ease;
+    transition:.3s;
 
 }
 
@@ -545,7 +436,7 @@ h1 span{
 
     text-align:center;
 
-    color:#8FD7FF;
+    color:#3B82F6;
 
     font-size:24px;
 
@@ -553,7 +444,7 @@ h1 span{
 
 .fa-chevron-right{
 
-    color:#BFDFFF;
+    color:#60A5FA;
 
     transition:.35s;
 
@@ -561,14 +452,14 @@ h1 span{
 
 .link-btn:hover{
 
-    transform:translateY(-5px);
+    background:#F8FAFC;
 
-    background:rgba(255,255,255,.12);
+    border-color:#60A5FA;
 
-    border-color:rgba(110,200,255,.25);
+    transform:translateY(-3px);
 
     box-shadow:
-        0 18px 40px rgba(0,0,0,.28);
+        0 15px 30px rgba(37,99,235,.12);
 
 }
 
@@ -680,133 +571,6 @@ h1 span{
         height:420px;
 
         opacity:0;
-
-    }
-
-}
-
-/* ==========================================
-   STARS
-========================================== */
-
-#stars{
-
-    position:fixed;
-
-    inset:0;
-
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:-15;
-
-}
-
-.star{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    background:#ffffff;
-
-    animation:twinkle linear infinite;
-
-}
-
-@keyframes twinkle{
-
-    0%{
-
-        opacity:.15;
-        transform:scale(.6);
-
-    }
-
-    50%{
-
-        opacity:1;
-        transform:scale(1);
-
-    }
-
-    100%{
-
-        opacity:.15;
-        transform:scale(.6);
-
-    }
-
-}
-
-
-/* ==========================================
-   SHOOTING STARS
-========================================== */
-
-#shooting-stars{
-
-    position:fixed;
-
-    inset:0;
-
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:-14;
-
-}
-
-.shooting-star{
-
-    position:absolute;
-
-    width:180px;
-
-    height:2px;
-
-    border-radius:10px;
-
-    background:
-    linear-gradient(
-        90deg,
-        rgba(255,255,255,1),
-        rgba(255,255,255,0)
-    );
-
-    transform:rotate(-35deg);
-
-    animation:shoot 3s linear forwards;
-
-}
-
-@keyframes shoot{
-
-    0%{
-
-        opacity:0;
-
-        transform:
-        translate(-200px,-200px)
-        rotate(-35deg);
-
-    }
-
-    10%{
-
-        opacity:1;
-
-    }
-
-    100%{
-
-        opacity:0;
-
-        transform:
-        translate(1800px,900px)
-        rotate(-35deg);
 
     }
 
