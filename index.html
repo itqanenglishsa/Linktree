@@ -177,57 +177,6 @@ Email
 
 <script src="script.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const isTikTok = navigator.userAgent.toLowerCase().includes("tiktok");
-
-  function handle(url) {
-    if (isTikTok) {
-      // صفحة بسيطة داخل تيك توك
-      document.body.innerHTML = `
-        <div style="font-family:Arial;text-align:center;padding:40px">
-          <h2>فتح الرابط</h2>
-          <a href="${url}" style="
-            display:inline-block;
-            padding:15px 25px;
-            background:#000;
-            color:#fff;
-            border-radius:10px;
-            text-decoration:none;
-            margin-top:20px;
-          ">اضغط للفتح</a>
-          <p style="margin-top:20px;font-size:13px;color:gray">
-            إذا لم يفتح، اختر Open in browser
-          </p>
-        </div>
-      `;
-    } else {
-      window.location.href = url;
-    }
-  }
-
-  // App Store (main button)
-  const app = document.querySelector(".main-btn");
-  if (app) {
-    app.addEventListener("click", e => {
-      e.preventDefault();
-      handle(app.href);
-    });
-  }
-
-  // كل روابط link-btn تأخذ href حقها مباشرة (بدون أي خربطة)
-  document.querySelectorAll(".link-btn").forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-      handle(btn.href);
-    });
-  });
-
-});
-</script>
-
-
 </body>
 
 </html>
